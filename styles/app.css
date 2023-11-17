@@ -311,7 +311,9 @@ a {
 /* 
   --Logos--
 */
-
+.main > .container {
+  overflow-x: hidden;
+}
 .logo-container {
   display: flex;
   align-items: center;
