@@ -5,11 +5,7 @@ const counting = document.querySelectorAll(".counting__count");
 const hourRemaining = document.querySelectorAll(".time-hours__text");
 const minuteRemaining = document.querySelectorAll(".time-minutes__text");
 const secondRemaining = document.querySelectorAll(".time-seconds__text");
-const likeBtn = document.querySelectorAll(".trending-option__like-svg")
-const links = document.querySelectorAll("a");
-
-console.log(links);
-
+const likeBtn = document.querySelectorAll(".trending-option__like-svg");
 
 function toggleMobileMenu() {
   hamMenu.classList.toggle("nav-ham--active");
