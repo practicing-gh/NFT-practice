@@ -39,7 +39,7 @@ hamMenu.addEventListener("click", toggleMobileMenu);
 document.addEventListener("click", (event) => {
   if (!hamMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
     hamMenu.classList.remove("nav-ham--active");
-    mobileMenu.style.left = "-70%";
+    mobileMenu.style.left = "-35rem";
   }
 });
 
