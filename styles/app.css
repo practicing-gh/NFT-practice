@@ -1,4 +1,4 @@
-@font-face{
+@font-face {
   font-family: "sitka";
   src: url("../sitka-small-599.ttf") format("truetype");
 }
@@ -312,6 +312,9 @@ a {
   --Logos--
 */
 
+.main > .container {
+  overflow-x: hidden;
+}
 .logo-container {
   display: flex;
   align-items: center;
@@ -894,8 +897,6 @@ a {
   transition: all 150ms ease-in-out;
 }
 
-
-
 /* 
 
 *********************
@@ -903,8 +904,6 @@ a {
 *********************
 
 */
-
-
 
 @media screen and (max-width: 1200px) {
   .nav-menu {
@@ -1026,6 +1025,9 @@ a {
   .market-social {
     width: auto;
   }
+  .trends {
+    padding-left: 0.6rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1112,6 +1114,9 @@ a {
   }
   .item-image__profile-img {
     width: 100%;
+  }
+  .trends {
+    padding-left: 1.2rem;
   }
 }
 
@@ -1210,6 +1215,9 @@ a {
   .market-social {
     text-align: center;
   }
+  .trends {
+    padding-left: 0.6rem;
+  }
 }
 
 @media (max-width: 340px) {
@@ -1234,5 +1242,13 @@ a {
   }
   .trending-options {
     padding: 1.6rem;
+  }
+  .trending-options:hover .trending-option__img {
+    width: 23rem;
+    height: 31rem;
+  }
+  .swiper-button-prev1,
+  .swiper-button-next1 {
+    top: 62rem;
   }
 }

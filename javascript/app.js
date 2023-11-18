@@ -5,12 +5,17 @@ const counting = document.querySelectorAll(".counting__count");
 const hourRemaining = document.querySelectorAll(".time-hours__text");
 const minuteRemaining = document.querySelectorAll(".time-minutes__text");
 const secondRemaining = document.querySelectorAll(".time-seconds__text");
-const likeBtn = document.querySelectorAll(".trending-option__like-svg")
+const likeBtn = document.querySelectorAll(".trending-option__like-svg");
+
+//prevent jumping on click
 const links = document.querySelectorAll("a");
+links.forEach((link) => {
+  link.addEventListener("click", function(event) {
+    event.preventDefault()
+  })
+})
 
-console.log(links);
-
-
+// mobile-menu function
 function toggleMobileMenu() {
   hamMenu.classList.toggle("nav-ham--active");
   if (hamMenu.classList.contains("nav-ham--active")) {
@@ -19,7 +24,15 @@ function toggleMobileMenu() {
     mobileMenu.style.left = "-35rem";
   }
 }
+hamMenu.addEventListener("click", toggleMobileMenu);
+document.addEventListener("click", (event) => {
+  if (!hamMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
+    hamMenu.classList.remove("nav-ham--active");
+    mobileMenu.style.left = "-35rem";
+  }
+});
 
+//counting up effect
 let interval = 3000;
 counting.forEach((count) => {
   let startValue = 0;
@@ -39,14 +52,8 @@ counting.forEach((count) => {
   }, duration);
 });
 
-hamMenu.addEventListener("click", toggleMobileMenu);
-document.addEventListener("click", (event) => {
-  if (!hamMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
-    hamMenu.classList.remove("nav-ham--active");
-    mobileMenu.style.left = "-70%";
-  }
-});
 
+//active nav-item
 hamMenuLinks.forEach(function (navLink) {
   navLink.addEventListener("click", function () {
     document
@@ -56,12 +63,14 @@ hamMenuLinks.forEach(function (navLink) {
   });
 });
 
+//like trends
 likeBtn.forEach((likeSvg) => {
   likeSvg.addEventListener("click", (event)=> {
     console.log(event);
   event.target.classList.toggle("trending-option__like-svg--fill")
 })})
 
+//remaining-time
 const targetTime = new Date();
 targetTime.setHours(23, 59, 59, 999);
 function updateTimer (){
